@@ -6,8 +6,10 @@ final _fireAuth = FirebaseAuth.instance;
 class AuthProvider extends ChangeNotifier {
   final form = GlobalKey<FormState>();
   var islogin = true;
+
   var enteredEmail = '';
   var enteredPassword = '';
+  var enteredName = ''; // ✅ TAMBAHKAN INI
 
   void submit(BuildContext context) async {
     final _isvalid = form.currentState!.validate();
@@ -26,6 +28,8 @@ class AuthProvider extends ChangeNotifier {
           email: enteredEmail,
           password: enteredPassword,
         );
+
+        // (Opsional) Di sini kamu bisa menyimpan nama ke Firestore kalau mau.
       }
 
       Navigator.pushReplacementNamed(context, '/home');
