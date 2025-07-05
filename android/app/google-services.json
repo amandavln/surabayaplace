@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "709671626028",
+    "project_id": "surabayaplace1",
+    "storage_bucket": "surabayaplace1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709671626028:android:8ef15821606a1665477889",
+        "android_client_info": {
+          "package_name": "com.example.surabayaplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADV38fgzvQbVUPMi3JAuklivS8RGEGecQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
