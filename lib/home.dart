@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:surabayaplace/cafe.dart';
+import 'package:surabayaplace/wisata.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -120,11 +122,11 @@ class HomePage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
-                  _buildMenuItem('Cafe', 'assets/images/icon_cafe.png'),
+                  _buildMenuItem('Cafe', 'assets/images/icon_cafe.png', context),
                   const SizedBox(height: 16),
-                  _buildMenuItem('Wisata', 'assets/images/icon_wisata.png'),
+                  _buildMenuItem('Wisata', 'assets/images/icon_wisata.png', context),
                   const SizedBox(height: 16),
-                  _buildMenuItem('Taman', 'assets/images/icon_taman.png'),
+                  _buildMenuItem('Taman', 'assets/images/icon_taman.png', context),
                 ],
               ),
             ),
@@ -135,23 +137,40 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem(String title, String iconPath) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3))],
-      ),
-      child: Row(
-        children: [
-          Image.asset(iconPath, height: 48),
-          const SizedBox(width: 20),
-          Text(
-            title,
-            style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-          ),
-        ],
+  Widget _buildMenuItem(String title, String iconPath, BuildContext context) {
+    return InkWell(
+      onTap: () {
+        if (title == 'Cafe') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const CafePage()),
+          );
+        } else if (title == 'Wisata') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const WisataPage()),
+          );
+        }
+        // Nanti bisa lanjut untuk "Taman"
+      },
+
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(16),
+          boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6, offset: Offset(0, 3))],
+        ),
+        child: Row(
+          children: [
+            Image.asset(iconPath, height: 48),
+            const SizedBox(width: 20),
+            Text(
+              title,
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+            ),
+          ],
+        ),
       ),
     );
   }
