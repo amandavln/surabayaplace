@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:surabayaplace/cafe.dart';
+import 'package:surabayaplace/taman.dart';
 import 'package:surabayaplace/wisata.dart';
+import 'package:surabayaplace/taman.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -150,8 +152,12 @@ class HomePage extends StatelessWidget {
             context,
             MaterialPageRoute(builder: (context) => const WisataPage()),
           );
+        } else if (title == 'Taman') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const TamanPage()),
+          );
         }
-        // Nanti bisa lanjut untuk "Taman"
       },
 
       child: Container(

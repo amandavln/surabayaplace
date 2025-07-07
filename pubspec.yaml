@@ -91,6 +91,16 @@ flutter:
     - assets/images/pantaikenjeran.jpg
     - assets/images/thr.jpeg
     - assets/images/tugu.webp
+    - assets/images/apsari.webp
+    - assets/images/bungkul.webp
+    - assets/images/ekspresi.webp
+    - assets/images/harmoni.jpeg
+    - assets/images/pakal.jpg
+    - assets/images/pelangi.webp
+    - assets/images/prestasi.webp
+    - assets/images/suroboyo.webp
+    - assets/images/surya.webp
+    - assets/images/wira.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

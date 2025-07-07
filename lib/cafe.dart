@@ -50,7 +50,7 @@ class CafePage extends StatelessWidget {
             final cafe = cafes[index];
             return Container(
               decoration: BoxDecoration(
-                color: Colors.green.shade300,
+                color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Column(
